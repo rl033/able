@@ -1,0 +1,48 @@
+<%= form_for(@student) do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field row">
+    <%= f.label :Name, class: "col-sm-3 col-sm-offset-3 control-label"%><br><br>  
+    <div class="col-sm-3 col-sm-offset-3">
+      <%= f.text_field :first_name, autofocus: true, placeholder: "First", class: "form-control"%>
+    </div>
+    <div class="col-sm-3">
+      <%= f.text_field :last_name, autofocus: true, placeholder: "Last", class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="field row">
+    <%= f.label :school, class: "col-sm-6 col-sm-offset-3 control-label"%><br>
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= f.text_field :school, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="field row">
+    <%= f.label :location, class: "col-sm-6 col-sm-offset-3 control-label"%><br>
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= f.text_field :location, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="field row">
+    <%= f.label :industry, class: "col-sm-6 col-sm-offset-3 control-label"%><br>
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= f.text_field :industry, class: "form-control" %>
+    </div>
+  </div><br>
+
+  <div class="actions row">
+    <%= f.submit "Save Profile", class: "btn btn-default col-sm-4  col-sm-offset-4" %>
+  </div>
+<% end %>

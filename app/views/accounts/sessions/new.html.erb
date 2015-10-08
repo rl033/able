@@ -1,0 +1,35 @@
+<div class="user-authentication">
+  <div class="user-form">
+    <div class="user-form-header"><h2>Sign in</h2></div>
+    <div class="user-form-content">
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field row">
+          <%= f.label :email, class: "col-sm-6 col-sm-offset-3 control-label" %><br />
+          <div class="col-sm-6 col-sm-offset-3">
+            <%= f.email_field :email, autofocus: true, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="field row">
+          <%= f.label :password, class: "col-sm-6 col-sm-offset-3 control-label" %><br />
+          <div class="col-sm-6 col-sm-offset-3">
+            <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+          </div>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="field row col-sm-6 col-sm-offset-3">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+
+        <div class="actions row">
+          <%= f.submit "Sign in", class: "btn btn-default col-sm-4 col-sm-offset-4" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- <%= render "accounts/shared/links" %> -->
+</div>
