@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151007234455) do
+ActiveRecord::Schema.define(version: 20151008044922) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -34,6 +34,22 @@ ActiveRecord::Schema.define(version: 20151007234455) do
   add_index "accounts", ["email"], name: "index_accounts_on_email", unique: true
   add_index "accounts", ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
 
+  create_table "contributions", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "project_id"
+    t.string   "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "investments", force: :cascade do |t|
+    t.integer  "organization_id"
+    t.integer  "project_id"
+    t.integer  "amount"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "organizations", force: :cascade do |t|
     t.string   "name"
     t.string   "location"
@@ -45,6 +61,19 @@ ActiveRecord::Schema.define(version: 20151007234455) do
     t.string   "website"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "industry"
+    t.string   "location"
+    t.integer  "total_investment"
+    t.datetime "start_date"
+    t.integer  "views"
+    t.integer  "rating"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "students", force: :cascade do |t|
