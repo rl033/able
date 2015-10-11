@@ -84,6 +84,6 @@ class Accounts::RegistrationsController < Devise::RegistrationsController
   protected
 
   def sign_up_params
-    params.require(:account).permit(:email, :password, :password_confirmation, :accountable_type)
+    params.require(:account).permit(:email, :password, :password_confirmation, :accountable_type, :provider, :uid)
   end
 end

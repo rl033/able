@@ -56,7 +56,10 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get "/dashboard/:id", to: "dashboard#index", as: :dashboard
+
   devise_for :accounts, controllers: { registrations: 'accounts/registrations',
-                                      sessions: 'accounts/sessions' }
+                                      sessions: 'accounts/sessions',
+                                      omniauth_callbacks: 'accounts/omniauth_callbacks' }
   root to: 'home#index'
 end

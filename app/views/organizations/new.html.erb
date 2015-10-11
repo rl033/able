@@ -1,5 +1,10 @@
 <div class="organization-info">
   <div class="organization-form-header"><h3>Create Profile</h3></div>
+  <div class="account-type">
+    <% if current_account.accountable_type == nil %>
+      <%= link_to 'Not an Organization?', new_student_path %>
+    <% end %>
+  </div>
   <div class="organization-form-content">
     <%= render 'form' %>
   </div>

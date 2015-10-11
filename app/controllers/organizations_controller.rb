@@ -29,8 +29,8 @@ class OrganizationsController < ApplicationController
     respond_to do |format|
       if @organization.save
         Account.update(current_account.id, accountable_id: @organization.id)
-        format.html { redirect_to @organization, notice: 'Organization was successfully created.' }
-        format.json { render :show, status: :created, location: @organization }
+        Account.update(current_account.id, accountable_type: 'Organization') if current_account.accountable_type == nil
+        format.html { redirect_to dashboard_path(current_account.id), notice: 'Student was successfully created.' }
       else
         format.html { render :new }
         format.json { render json: @organization.errors, status: :unprocessable_entity }

@@ -22,10 +22,17 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+# runtime developer console
+gem 'pry'
 # tux
 gem 'tux'
 # User devise for authentication
 gem 'devise'
+# Facebook OAuth2 Strategy for OmniAuth
+gem 'omniauth'
+gem 'omniauth-facebook'
+# Loads environment variables from `.env`.
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

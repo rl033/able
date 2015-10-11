@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008044922) do
+ActiveRecord::Schema.define(version: 20151008213650) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20151008044922) do
     t.datetime "updated_at",                          null: false
     t.integer  "accountable_id"
     t.string   "accountable_type"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "accounts", ["accountable_type", "accountable_id"], name: "index_accounts_on_accountable_type_and_accountable_id"
