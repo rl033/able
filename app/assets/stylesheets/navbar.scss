@@ -1,20 +1,41 @@
 .navbar-custom {
-  background-color: #7E7FAA;
-  color: white;
+  // background-color: #7E7FAA;
+  background-color: white;
+  color: #A6A6A6;
   // box-shadow: 0 0 1px #aaa;
+  border-bottom: 1px solid #E6E6E6 !important;
 }
-.navbar-header {
-  margin-left: 10%;
+.navbar-header-custom {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 3%;
 }
 .logo {
   text-decoration: none;
-  color: white;
+  color: #7E7FAA;
   font-weight: bold;
+  font-size: 1.6em;
+  font-family: 'Lato', serif;
 }
 .logo:hover {
-  color: white;
+  color: #7E7FAA;
+  background-color: none;
+  text-decoration: none;
 }
-
+.nav-section {
+  margin-left: 35%; 
+}
+.nav-link {
+  color: #7E7FAA;
+  text-decoration: none;
+  // font-weight: bold;
+  font-size: 1.1em;
+}
+.nav-link:hover {
+  color: white;
+  text-decoration: none;
+  background-color: none;
+}
 .user-button {
   margin-top: 0.5%;
   margin-left: -30%;
@@ -26,7 +47,12 @@
 .dropdown {
   margin-top: 5%;
   border: none;
-  color: white;
+  color: #7E7FAA;
+  right: 20%;
+}
+.dropdown-menu {
+  margin-top: 8% !important;
+  text-align: right;
 }
 .btn {
   background: none;

@@ -1,41 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="projects">
+  <p id="notice"><%= notice %></p>
 
-<h1>Listing Projects</h1>
+  <div class="projects-header"><h3 class="projects-header-title">EXPLORE A WORLD FULL OF CREATIVITY</h3></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Industry</th>
-      <th>Location</th>
-      <th>Total investment</th>
-      <th>Start date</th>
-      <th>Views</th>
-      <th>Rating</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class="projects-content row">
     <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.description %></td>
-        <td><%= project.industry %></td>
-        <td><%= project.location %></td>
-        <td><%= project.total_investment %></td>
-        <td><%= project.start_date %></td>
-        <td><%= project.views %></td>
-        <td><%= project.rating %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="project-snippet col-md-4">
+        <%= image_tag(project.icon.url(:medium), class: "project-img") %>
+        <div class="project-info">
+          <%= link_to project.name, project_path(project), class: "project-info-name"  %><br>
+          <div class="project-info-description"><%= project.description %></div>
+          <div class="project-info-tags"><i class="fa fa-tags"></i> <%= project.industry %></div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>
+  </div>
+  
+</div>

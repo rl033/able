@@ -33,6 +33,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 # Loads environment variables from `.env`.
 gem 'dotenv-rails', :groups => [:development, :test]
+# Easy file attachment management for ActiveRecord
+gem 'paperclip', "~> 4.3"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

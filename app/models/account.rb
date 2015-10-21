@@ -7,12 +7,19 @@ class Account < ActiveRecord::Base
 
   belongs_to :accountable, polymorphic: true
 
-  def name
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "default_profile_pic.jpg"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
+  def display_name
     if accountable_id
       return accountable_type == "Student" ? accountable.first_name : accountable.name
     else
       return email
     end
+  end
+
+  def full_name
+    return accountable_type == "Student" ? accountable.first_name + " " + accountable.last_name : accountable.name
   end
 
   def self.from_omniauth(auth)  

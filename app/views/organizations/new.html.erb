@@ -1,12 +1,12 @@
 <div class="organization-info">
-  <div class="organization-form-header"><h3>Create Profile</h3></div>
-  <div class="account-type">
+  <div class="organization-form-header"><h3>Create your profile</h3></div>
+  <div class="account-type row">
     <% if current_account.accountable_type == nil %>
-      <%= link_to 'Not an Organization?', new_student_path %>
+      <%= link_to 'Not an Organization?', new_student_path, class: "col-sm-5  col-sm-offset-7" %>
     <% end %>
   </div>
   <div class="organization-form-content">
     <%= render 'form' %>
   </div>
-  <%= link_to 'Back', organizations_path %>
+
 </div>

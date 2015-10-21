@@ -1,12 +1,13 @@
 <div class="student-info">
   <div class="student-form-header"><h3>Create your profile</h3></div>
-  <div class="account-type">
-    <% if current_account.accountable_type == nil %>
-      <%= link_to 'Not a Student?', new_organization_path %>
-    <% end %>
-  </div>
+  <% if current_account.accountable_type == nil %> 
+    <div class="account-type row">
+      <%= link_to 'Not a Student?', new_organization_path, class: "col-sm-2  col-sm-offset-7"%>
+    </div>
+  <% end %>
+  
   <div class="student-form-content">
     <%= render 'form' %>
   </div>
-  <%= link_to 'Back', students_path %>
+  
 </div>

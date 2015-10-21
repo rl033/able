@@ -7,3 +7,39 @@
 .user-form-content {
   margin-top: 5%;
 }
+
+.divider > hr {
+    height: 1px;
+    border: 0 none;
+    background-color: #DADADA;
+    width: 50%;
+}
+
+// hr:before {
+//   content: '';
+//   display: block;
+//   height: 1px;
+//   // background-color: #111;
+// }
+
+.divider hr:after {
+    content: 'OR';
+    // color:#ccc;
+    // color: #222;
+    display:block;
+    text-align:center;
+    // background-color:#222;
+    width: 50%;
+    margin-top:-10px;
+    position:absolute;
+    left:50%;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);  
+}
+
+.fb-button {
+    background: #3B5998;
+}

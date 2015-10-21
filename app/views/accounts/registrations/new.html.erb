@@ -45,8 +45,13 @@
         <div class="actions row">
           <%= f.submit "Sign up and continue", class: "btn btn-default col-sm-4 col-sm-offset-4" %>
         </div>
+        <div class="divider"><hr></div>
+        <div class="row">
+          <%= link_to account_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-facebook col-sm-4 col-sm-offset-4" do %>
+            <i class="fa fa-facebook"></i> Sign up with Facebook
+          <% end %>
+        </div>
 
-        <%= link_to "Sign in with Facebook", account_omniauth_authorize_path(:facebook) %>
       <% end %>
     </div>
   </div>

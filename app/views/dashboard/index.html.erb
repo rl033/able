@@ -1,3 +1,32 @@
 <div class="dashboard">
   Dashboard
+  <div class="account-info col-md-3">
+    <div class="basic-info">
+      <div class="profile-left col-sm-5">
+        <%= image_tag(current_account.avatar.url, class: "profile-pic", size: "100x100") %>
+      </div>
+      <div class="profile-right col-sm-7"><%=current_account.full_name%></div>
+    </div>
+    <div class="social-info">
+      <div class="project col-sm-4"><i class="fa fa-folder-open fa-2x"></i></div>
+      <div class="likes col-sm-4"><i class="fa fa-heart fa-2x"></i></div>
+      <div class="ranking col-sm-4"><i class="fa fa-flag fa-2x"></i></div>
+    </div>
+    <div class="funding-info">
+      <div class="funding-info-header"><h5>Funds</h5></div>
+      <div class="funding-info-content"></div>
+    </div>
+    <div class="recent-project">
+      <div class="recent-project-header"><h5>Recent Projects</h5></div>
+      <div class="recent-project-content"></div>
+    </div>
+  </div>
+
+  <div class="dashboard-content col-md-8">
+    <div class="rec-org">
+      <div class="rec-org-header"><h4>Recommended Organizations</h4><hr></div>
+      <div class="rec-org-content"></div>
+    </div>
+  </div>
+
 </div>

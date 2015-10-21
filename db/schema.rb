@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008213650) do
+ActiveRecord::Schema.define(version: 20151017001935) do
 
   create_table "accounts", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 20151008213650) do
     t.string   "accountable_type"
     t.string   "provider"
     t.string   "uid"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "accounts", ["accountable_type", "accountable_id"], name: "index_accounts_on_accountable_type_and_accountable_id"
@@ -65,6 +69,17 @@ ActiveRecord::Schema.define(version: 20151008213650) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "project_images", force: :cascade do |t|
+    t.string   "caption"
+    t.integer  "project_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
@@ -74,8 +89,12 @@ ActiveRecord::Schema.define(version: 20151008213650) do
     t.datetime "start_date"
     t.integer  "views"
     t.integer  "rating"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
   end
 
   create_table "students", force: :cascade do |t|
